@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/navigation_cerv"
+        android:icon="@drawable/ic_baseline_local_bar_24px"
+        android:title="@string/title_cerv"
+        />
+
+    <item
+        android:id="@+id/navigation_prato"
+        android:icon="@drawable/ic_baseline_restaurant_24px"
+        android:title="@string/title_prato"
+        />
+
+    <item
+        android:id="@+id/navigation_admin"
+        android:icon="@drawable/ic_baseline_person_add_24px"
+        android:title="@string/title_admin"         />
+
+    <item
+        android:id="@+id/navigation_criac"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="@string/title_criac"
+       />
+
+    <item
+        android:id="@+id/navigation_perf"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        android:title="@string/title_perf"
+       />
+
+</menu>

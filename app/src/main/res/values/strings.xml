@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">HarmoBeer</string>
+    <string-array name="generos_array">
+        <item>Ação</item>
+        <item>Comédia</item>
+        <item>Romance</item>
+        <item>Terror</item>
+        <item>Animação</item>
+        <item>Ficção</item>
+        <item>Fantasia</item>
+    </string-array>
+    <string-array name="opcoes">
+        <item>Remover</item>
+        <item>Atualizar</item>
+        <item>Cancelar</item>
+    </string-array>
+    <string name="title_activity_login">Harmobeer </string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Senha</string>
+    <string name="action_sign_in">Entrar</string>
+    <string name="action_sign_in_short">Entrar</string>
+    <string name="error_invalid_email">Esse endereço de email é inválido</string>
+    <string name="error_invalid_password">Senha muito curta</string>
+    <string name="error_incorrect_password">Senha incorreta</string>
+    <string name="error_field_required">Campo obrigatório</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."    </string>
+    <string name="title_activity_main">Painel de Administrador</string>
+    <string name="title_cerv">Cadastrar Cerveja</string>
+    <string name="title_prato">Cadastrar Prato</string>
+    <string name="title_admin">Cadastrar Admin</string>
+    <string name="title_criac">Criações</string>
+    <string name="title_perf">Perfil</string>
+</resources>
