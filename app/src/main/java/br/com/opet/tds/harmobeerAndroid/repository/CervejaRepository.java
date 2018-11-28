@@ -28,11 +28,11 @@ public class CervejaRepository {
         return mCervejas;
     }
 
-    /*public List<CervejaDAO.CervejaJoin> getAllCervejasJoin(){
-        mCervejasJoin = mCervejaDAO.loadCervejasJoin();
+    public List<CervejaDAO.CervejaJoin> getAllCervejasJoin(long id){
+        mCervejasJoin = mCervejaDAO.loadCervejasJoin(id);
         return mCervejasJoin;
     }
-    */
+
 
     public Cerveja loadCervejaByID(long ID) {
         return mCervejaDAO.loadCervejasByID(ID);

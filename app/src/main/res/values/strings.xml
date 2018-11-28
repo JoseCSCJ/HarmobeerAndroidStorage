@@ -1,14 +1,6 @@
 <resources>
     <string name="app_name">HarmoBeer</string>
-    <string-array name="generos_array">
-        <item>Ação</item>
-        <item>Comédia</item>
-        <item>Romance</item>
-        <item>Terror</item>
-        <item>Animação</item>
-        <item>Ficção</item>
-        <item>Fantasia</item>
-    </string-array>
+
     <string-array name="opcoes">
         <item>Remover</item>
         <item>Atualizar</item>

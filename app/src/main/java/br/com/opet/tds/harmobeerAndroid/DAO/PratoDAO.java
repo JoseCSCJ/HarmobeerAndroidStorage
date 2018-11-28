@@ -33,11 +33,18 @@ public interface PratoDAO {
     @Query("SELECT * from prato_table ORDER BY nome ASC")
     List<Prato> loadPratos();
 
-  /*  @Query("SELECT filme_table.ID,filme_table.titulo,filme_table.ano_producao,filme_table.avaliacao, genero_table.ID as genero_ID ,genero_table.nome as genero_nome from filme_table INNER JOIN genero_table ON filme_table.genero_id = genero_table.ID ORDER BY avaliacao DESC")
-    List<FilmeJoin> loadFilmesJoin();
+    @Query("SELECT prato_table.ID," +
+            " prato_table.usuario_id," +
+            " prato_table.nome," +
+            " usuario_table.id as usuario_id," +
+            " usuario_table.username as username " +
+            "from prato_table " +
+            "INNER JOIN usuario_table " +
+            "ON prato_table.usuario_id = usuario_table.ID " +
+            "WHERE usuario_table.ID = :id"+
+            " ORDER BY nome ASC")
+    List<PratoJoin> loadPratosJoin(long id);
 
-    @Query("SELECT titulo from filme_table")
-    List<String> loadFilmesNames(); */
 
     static class PratoJoin{
         @Embedded

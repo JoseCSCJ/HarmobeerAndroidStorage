@@ -33,11 +33,20 @@ public interface CervejaDAO {
     @Query("SELECT * from cerveja_table ORDER BY nome ASC")
     List<Cerveja> loadCervejas();
 
-  /*  @Query("SELECT filme_table.ID,filme_table.titulo,filme_table.ano_producao,filme_table.avaliacao, genero_table.ID as genero_ID ,genero_table.nome as genero_nome from filme_table INNER JOIN genero_table ON filme_table.genero_id = genero_table.ID ORDER BY avaliacao DESC")
-    List<FilmeJoin> loadFilmesJoin();
+    @Query("SELECT cerveja_table.ID," +
+            " cerveja_table.usuario_id," +
+            " cerveja_table.nome," +
+            " cerveja_table.estilo," +
+            " cerveja_table.teor_alc," +
+            " usuario_table.ID as usuario_id," +
+            " usuario_table.username as username " +
+            "from cerveja_table " +
+            "INNER JOIN usuario_table " +
+            "ON cerveja_table.usuario_id = usuario_table.ID " +
+            "WHERE usuario_table.ID=:id "+
+            "ORDER BY nome ASC")
+    List<CervejaJoin> loadCervejasJoin(long id);
 
-    @Query("SELECT titulo from filme_table")
-    List<String> loadFilmesNames(); */
 
     static class CervejaJoin{
         @Embedded

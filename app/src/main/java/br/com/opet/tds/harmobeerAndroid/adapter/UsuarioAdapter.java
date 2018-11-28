@@ -1,4 +1,4 @@
-/*package br.com.opet.tds.roomproject_modelo1.adapter;
+package br.com.opet.tds.harmobeerAndroid.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -11,20 +11,18 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import br.com.opet.tds.roomproject_modelo1.R;
-import br.com.opet.tds.roomproject_modelo1.model.Filme;
-import br.com.opet.tds.roomproject_modelo1.model.Genero;
+import br.com.opet.tds.harmobeerAndroid.R;
+import br.com.opet.tds.harmobeerAndroid.model.Usuario;
 
 /**
  * Created by Diego on 22/10/2018.
  */
 
-/*public class GeneroAdapter extends ArrayAdapter<Genero> {
-
+public class UsuarioAdapter extends ArrayAdapter<Usuario> {
 
     private int rId;
 
-    public GeneroAdapter(Context context, int resource,List<Genero> objects) {
+    public UsuarioAdapter(Context context, int resource,List<Usuario> objects) {
         super(context, resource, objects);
         rId = resource;
     }
@@ -32,26 +30,26 @@ import br.com.opet.tds.roomproject_modelo1.model.Genero;
     @Override
     public View getView(int position, View currentView, ViewGroup parent){
         /*View mView = currentView;
-
         if(mView == null){
             LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             mView = inflater.inflate(rId,null);
-        }
+        }*/
 
-        Genero genero = getItem(position);
+        Usuario usuario = getItem(position);
 
-        TextView textGenero = (TextView)super.getView(position,currentView,parent);
-        textGenero.setText(genero.getNome());
+        TextView textUsuario = (TextView)super.getView(position,currentView,parent);
+        textUsuario.setText(usuario.getUsername());
 
-        return textGenero;
+        return textUsuario;
     }
 
     @Override
     public View getDropDownView(int position, View currentView, ViewGroup parent) {
-        Genero genero = getItem(position);
+        Usuario usuario = getItem(position);
         TextView label = (TextView) super.getDropDownView(position, currentView, parent);
-        label.setText(genero.getNome());
+        label.setText(usuario.getUsername());
 
         return label;
     }
-} */
+}
+

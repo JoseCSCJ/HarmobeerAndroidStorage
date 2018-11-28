@@ -26,14 +26,12 @@ public class UsuarioRepository {
         mUsuarioDAO = db.usuarioDAO();
     }
 
+
+
     public List<Usuario> getAllUsuarios(){
         mUsuarios = mUsuarioDAO.loadUsuario();
         return mUsuarios;
     }
-
-    /*public Usuario loadUsuarioByID(long ID) {
-        return mUsuarioDAO.loadUsuarioByID(ID);
-    }*/
 
     public void insert(Usuario usuario){
         mUsuarioDAO.insert(usuario);

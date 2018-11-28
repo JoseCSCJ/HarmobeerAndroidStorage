@@ -17,7 +17,7 @@ import br.com.opet.tds.harmobeerAndroid.repository.Repository;
 public class UsuarioFragment extends Fragment {
 
     private EditText username, email, senha;
-    private Repository repository;
+
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -32,30 +32,42 @@ public class UsuarioFragment extends Fragment {
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_usuario, null);
-        Button mButton = (Button) view.findViewById(R.id.cadastrarUsuario);
+        Button mButton = view.findViewById(R.id.cadastrarUsuario);
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                username = getActivity().findViewById(R.id.username);
-                email = getActivity().findViewById(R.id.email);
-                senha= getActivity().findViewById(R.id.senha);
+                try {
+                    username = getActivity().findViewById(R.id.username);
+                    email = getActivity().findViewById(R.id.email);
+                    senha = getActivity().findViewById(R.id.senha);
 
-                Usuario usuario = new Usuario();
+                    Usuario usuario = new Usuario();
 
-                Long idUsuario = (Long)getActivity().getIntent().getSerializableExtra("idUsuarioLogado");
-
-                usuario.setUsername(username.getText().toString());
-                usuario.setEmail(email.getText().toString());
-                usuario.setSenha(senha.getText().toString());
+                    usuario.setUsername(username.getText().toString());
+                    usuario.setEmail(email.getText().toString());
+                    usuario.setSenha(senha.getText().toString());
 
 
-                Repository repository = new Repository(getActivity().getApplicationContext());
-                repository.getUsuarioRepository().insert(usuario);
-
-                Toast.makeText(getActivity().getApplicationContext(),
-                        "O usuario administrador"+ usuario.getUsername() + " foi adicionado com sucesso! " +
-                                "Passe esses dados para que o novo administrador possa fazer seu primeiro login",
-                        Toast.LENGTH_SHORT).show();
+                    Repository repository = new Repository(getActivity().getApplicationContext());
+                    if (usuario.getEmail().contains("@") &&
+                            !usuario.getSenha().isEmpty() &&
+                            !usuario.getUsername().isEmpty() &&
+                            usuario.getSenha().length()>4) {
+                        repository.getUsuarioRepository().insert(usuario);
+                    }
+                    else{
+                        throw new Exception();
+                    }
+                    Toast.makeText(getActivity().getApplicationContext(),
+                            "O usuario administrador " + usuario.getUsername() + " foi adicionado com sucesso! " +
+                                    "Passe os dados para que o novo administrador possa fazer seu primeiro login",
+                            Toast.LENGTH_SHORT).show();
+                }catch (Throwable t){
+                    t.printStackTrace();
+                    Toast.makeText(getActivity().getApplicationContext(),
+                            "Não foi possível adicionar esse administrador. Reveja os dados inseridos.",
+                            Toast.LENGTH_SHORT).show();
+                }
 
                 username.setText("");
                 email.setText("");

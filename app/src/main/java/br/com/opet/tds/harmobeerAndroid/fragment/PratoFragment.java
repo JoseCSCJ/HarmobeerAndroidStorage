@@ -36,21 +36,35 @@ public class PratoFragment extends Fragment {
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                nomeprato = getActivity().findViewById(R.id.nomeprato);
+                try {
+                    nomeprato = getActivity().findViewById(R.id.nomeprato);
 
-                Prato prato = new Prato();
+                    Prato prato = new Prato();
 
-                Long idUsuario = (Long)getActivity().getIntent().getSerializableExtra("idUsuarioLogado");
+                    Long idUsuario = (Long) getActivity().getIntent().getSerializableExtra("idUsuarioLogado");
 
-                prato.setNome(nomeprato.getText().toString());
-                prato.setUsuarioId(idUsuario);
+                    prato.setNome(nomeprato.getText().toString());
+                    prato.setUsuarioId(idUsuario);
 
-                Repository repository = new Repository(getActivity().getApplicationContext());
-                repository.getPratoRepository().insert(prato);
+                    Repository repository = new Repository(getActivity().getApplicationContext());
 
-                Toast.makeText(getActivity().getApplicationContext(),
-                        "O prato "+ prato.getNome() + " foi adicionado com sucesso!",
-                        Toast.LENGTH_SHORT).show();
+                    if(!prato.getNome().isEmpty()) {
+                        repository.getPratoRepository().insert(prato);
+
+                        Toast.makeText(getActivity().getApplicationContext(),
+                                "O prato " + prato.getNome() + " foi adicionado com sucesso!",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                    else{
+                        throw new Exception();
+                    }
+                }
+                catch (Throwable t){
+                    t.printStackTrace();
+                    Toast.makeText(getActivity().getApplicationContext(),
+                            "O prato não pode ser adicionado",
+                            Toast.LENGTH_SHORT).show();
+                }
 
                 nomeprato.setText("");
 
