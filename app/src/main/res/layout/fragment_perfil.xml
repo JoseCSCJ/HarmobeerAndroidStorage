@@ -3,32 +3,47 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="br.com.opet.tds.harmobeerAndroid.activity.MainActivity"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:id="@+id/fragment_perfil">
 
 
     <EditText
         android:id="@+id/usernamePer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="10dp"
         android:layout_alignParentStart="true"
         android:hint="Username" />
 
-    <EditText
+    <TextView
         android:id="@+id/emailPer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="120dp"
-        android:hint="Email" />
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="100dp"
+        android:textSize="15sp"
+        android:textStyle="bold"
+         />
+
+    <TextView
+        android:id="@+id/avisoEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="74dp"
+        android:layout_marginLeft="110dp"
+        android:text="O email não pode ser alterado."
+        android:textSize="12sp" />
 
     <Button
         android:id="@+id/editarUsuario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
-        android:text="Editar Informações"
+        android:layout_marginTop="90dp"
+        android:text="Editar Username"
         android:textStyle="bold"
         />
 
@@ -38,7 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="130dp"
         android:inputType="textPassword"
         android:hint="Senha Antiga" />
 
@@ -48,7 +63,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="240dp"
+        android:layout_marginTop="170dp"
         android:inputType="textPassword"
         android:hint="Senha Nova" />
 
@@ -58,7 +73,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="280dp"
+        android:layout_marginTop="210dp"
         android:inputType="textPassword"
         android:hint="Confirme a senha nova" />
 
@@ -66,9 +81,35 @@
         android:id="@+id/alterarSenha"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="320dp"
+        android:layout_marginTop="250dp"
         android:text="Alterar Senha"
         android:textStyle="bold"
         />
+
+    <ImageView
+        android:id="@+id/imageUser"
+        android:layout_width="120dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/alterarSenha"
+        android:layout_alignParentStart="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginEnd="150dp"
+        android:src="@mipmap/ic_camera"
+        />
+
+    <Button
+        android:id="@+id/alterarImagem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="400dp"
+        android:text="Alterar Imagem"
+        android:textStyle="bold"
+        />
+
+
+
 
 </RelativeLayout>
